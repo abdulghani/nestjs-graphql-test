@@ -1,0 +1,5 @@
+type Query {
+  hello: String
+  now: DateTime
+  input(data: DateTime): DateTime
+}
