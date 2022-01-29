@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run graphql:generate && nest start --watch",
-    "graphql:generate": "ts-node ./scripts/graphql-generate",
+    "graphql:generate": "[ ! $CI ] && ts-node ./scripts/graphql-generate || echo \"NOT RUNNING IN CI ENV\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "npm run graphql:generate"
   },
@@ -28,6 +28,7 @@
     "@nestjs/cli": "^8.2.0",
     "@types/node": "^17.0.13",
     "apollo-server-core": "^3.6.2",
+    "npm": "^8.4.0",
     "ts-morph": "^13.0.3",
     "ts-node": "^10.4.0"
   }
