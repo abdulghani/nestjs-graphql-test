@@ -8,6 +8,9 @@ import DateTimeScalar from "./scalars/datetime-scalar";
 import PubSubProvider from "./utils/pubsub-provider";
 import TransportProvider from "./utils/transport-provider";
 
+// GRAPQHL NEXTJS
+// https://docs.nestjs.com/graphql/quick-start
+
 @Module({
   imports: [
     ConfigModule.forRoot({ expandVariables: true }),
