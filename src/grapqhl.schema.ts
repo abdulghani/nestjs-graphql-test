@@ -14,5 +14,10 @@ export interface IQuery {
     input(data?: Nullable<DateTime>): Nullable<DateTime> | Promise<Nullable<DateTime>>;
 }
 
+export interface ISubscription {
+    __typename?: 'ISubscription';
+    inputUpdated(): Nullable<DateTime> | Promise<Nullable<DateTime>>;
+}
+
 export type DateTime = string;
 type Nullable<T> = T | null;

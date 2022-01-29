@@ -3,3 +3,7 @@ type Query {
   now: DateTime
   input(data: DateTime): DateTime
 }
+
+type Subscription {
+  inputUpdated: DateTime
+}
