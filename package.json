@@ -8,8 +8,8 @@
     "graphql:generate": "[ ! $CI ] && ts-node ./scripts/graphql-generate || echo \"NOT RUNNING IN CI ENV\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "npm run env:setup; npm run docker:up; npm run graphql:generate",
-    "docker:up": "docker-compose -f ./.docker-compose.yml up -d",
-    "env:setup": "[[ ! $CI && ! -f ./.env ]] && cp ./.env.example ./.env || \"ENV ALREADY SETUP/NOT RUNNING IN CI ENV\""
+    "docker:up": "[ ! $CI ] && docker-compose -f ./.docker-compose.yml up -d || echo \"NOT RUNNING IN CI ENV\"",
+    "env:setup": "[ ! $CI ] && [ ! -f ./.env ] && cp ./.env.example ./.env || echo \"ENV ALREADY SETUP/NOT RUNNING IN CI ENV\""
   },
   "keywords": [],
   "author": "",
